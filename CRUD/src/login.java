@@ -164,11 +164,9 @@ public class login extends javax.swing.JFrame {
             java.sql.PreparedStatement pst= cn.prepareStatement(sql);
             java.sql.ResultSet rs= pst.executeQuery(sql);
             if(rs.next()){
-                if(txtUsername.getText().equals(rs.getString("Username"))&&txtPassword.getText().equals(rs.getString("Password"))){
-                    JOptionPane.showMessageDialog(null,"Berhasil login");
-                    this.setVisible(false);
-                    new SignUp().setVisible(true);
-                }
+                JOptionPane.showMessageDialog(null,"Berhasil login");
+                this.setVisible(false);
+                new SignUp().setVisible(true);
             }else{
                 JOptionPane.showMessageDialog(null,"Username atau Password salah");
             }
